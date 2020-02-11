@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	<!-- Exam exam = new NewlecExam(); -->
+	<bean id="exam" class="spring.di.entity.NewlecExam">
+	<property name="kor">
+		<value>10</value>
+	</property>
+	<property name="eng" value="10" />
+	<property name="math" value="10" />
+	<property name="com" value="10" />
+	</bean>
+	<!-- ExamConsole console = new GridExamConsole(); -->
+	<bean id="console" class="spring.di.ui.InlineExamConsole">
+		<!-- console.setExam(exam); -->
+		<property name="exam" ref="exam" />
+		<!-- 이 부분 헷갈릴 수 있는데 중요하다. name에서 "exam"은 setExam을 그렇게 표현한것이다. 왜냐면 property가 
+			속성인데 거기에 붙이는 것이기 때문이다. 또한 값으로 value, ref 가있는데 exam의 저 주소는 레퍼런스이기 때문에 ref로 
+			넣는다, -->
+	</bean>
+</beans>
