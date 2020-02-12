@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.3.xsd">
+
+
+	
+	<context:component-scan base-package="spring.di.ui, spring.di.entity"/>
+	<!-- <context:annotation-config /> -->
+	<!-- Exam exam = new NewlecExam(); -->
+	
+	<!-- <bean id="exam1" class="spring.di.entity.NewlecExam" p:kor="10"
+		p:eng="10" />
+
+	<bean id="exam2" class="spring.di.entity.NewlecExam" p:kor="20"
+		p:eng="20" /> -->
+		
+	<!-- <bean id="exam" class="spring.di.entity.NewlecExam"> <constructor-arg 
+		name = "kor" value="10"/> <constructor-arg name = "eng" value="20"/> <constructor-arg 
+		name = "com" value="30"/> <constructor-arg name = "math" value="40"/> </bean> -->
+	<!-- ExamConsole console = new GridExamConsole(); -->
+
+
+	<!-- <bean id="console" class="spring.di.ui.InlineExamConsole">
+		//console.setExam(exam);
+		//<property name="exam" ref="exam" />
+		이 부분 헷갈릴 수 있는데 중요하다. name에서 "exam"은 setExam을 그렇게 표현한것이다. 왜냐면 property가 
+			속성인데 거기에 붙이는 것이기 때문이다. 또한 값으로 value, ref 가있는데 exam의 저 주소는 레퍼런스이기 때문에 ref로 
+			넣는다,
+	</bean> -->
+
+</beans>
